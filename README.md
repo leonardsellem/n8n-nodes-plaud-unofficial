@@ -1,5 +1,8 @@
 # n8n-nodes-plaud-unofficial
 
+[![npm version](https://img.shields.io/npm/v/n8n-nodes-plaud-unofficial.svg)](https://www.npmjs.com/package/n8n-nodes-plaud-unofficial)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This is an n8n community node for the **unofficial Plaud API**. It lets you interact with your [Plaud](https://plaud.ai/) voice recorder data in n8n workflows.
 
 Plaud is a voice recording device that captures meetings, conversations, and notes with AI-powered transcription and summarization.
@@ -10,7 +13,27 @@ Plaud is a voice recording device that captures meetings, conversations, and not
 
 ## Installation
 
-Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
+### Via n8n Community Nodes (Recommended)
+
+1. Open your n8n instance
+2. Go to **Settings** → **Community Nodes**
+3. Click **Install a community node**
+4. Enter: `n8n-nodes-plaud-unofficial`
+5. Click **Install**
+
+See the [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/installation/) for more details.
+
+### Via npm (Self-hosted)
+
+For self-hosted n8n installations:
+
+```bash
+npm install n8n-nodes-plaud-unofficial
+```
+
+Then restart your n8n instance.
+
+**npm package:** [npmjs.com/package/n8n-nodes-plaud-unofficial](https://www.npmjs.com/package/n8n-nodes-plaud-unofficial)
 
 ## Quick Start
 
