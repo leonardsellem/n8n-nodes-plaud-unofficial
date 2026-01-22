@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-plaud-unofficial",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "n8n community node for the unofficial Plaud API",
   "license": "MIT",
   "homepage": "https://github.com/leonardsellem/n8n-nodes-plaud-unofficial",

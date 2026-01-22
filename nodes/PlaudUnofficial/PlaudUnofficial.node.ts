@@ -1,5 +1,4 @@
 import {
-	NodeConnectionTypes,
 	type IDataObject,
 	type IExecuteFunctions,
 	type INodeExecutionData,
@@ -25,8 +24,8 @@ export class PlaudUnofficial implements INodeType {
 			name: 'Plaud Unofficial',
 		},
 		usableAsTool: true,
-		inputs: [NodeConnectionTypes.Main],
-		outputs: [NodeConnectionTypes.Main],
+		inputs: ['main'],
+		outputs: ['main'],
 		credentials: [{ name: 'plaudUnofficialApi', required: true }],
 		requestDefaults: {
 			baseURL: 'https://api-euc1.plaud.ai',
