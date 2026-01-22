@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "description": "n8n community node for the unofficial Plaud API",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/leonardsellem/n8n-nodes-plaud-unofficial",
   "keywords": [
-    "n8n-community-node-package"
+    "n8n-community-node-package",
+    "plaud",
+    "transcription",
+    "audio",
+    "voice-recorder"
   ],
   "author": {
     "name": "Leonard Sellem",
