@@ -12,6 +12,42 @@ Plaud is a voice recording device that captures meetings, conversations, and not
 
 Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
 
+## Quick Start
+
+### 1. Get your Bearer token from the Plaud web app
+
+1. Open [app.plaud.ai](https://app.plaud.ai/) and log in
+2. Open your browser's Developer Tools:
+   - **Chrome/Edge**: Press `F12` or `Ctrl+Shift+I` (Windows) / `Cmd+Option+I` (Mac)
+   - **Firefox**: Press `F12` or `Ctrl+Shift+I` (Windows) / `Cmd+Option+I` (Mac)
+   - **Safari**: Enable Developer menu in Preferences → Advanced, then `Cmd+Option+I`
+3. Go to the **Network** tab
+4. Click on any recording in the Plaud app to trigger an API request
+5. In the Network tab, look for requests to `api-euc1.plaud.ai`
+6. Click on a request and find the **Headers** section
+7. Look for `Authorization: Bearer eyJ...` — copy everything **after** `Bearer ` (the long string starting with `eyJ`)
+
+```
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...
+                      ↑ Copy from here (without "Bearer ")
+```
+
+### 2. Add credentials in n8n
+
+1. In n8n, go to **Settings** → **Credentials** → **Add Credential**
+2. Search for **"Plaud Unofficial API"**
+3. Paste your token into the **Access Token** field
+4. Click **Save**
+
+### 3. Use the node
+
+1. Add a **Plaud Unofficial** node to your workflow
+2. Select your saved credential
+3. Choose a resource (File, Folder, AI, Share) and operation
+4. Execute!
+
+> **Tip:** Start with **File → Get All** to list all your recordings and verify the connection works.
+
 ## Operations
 
 ### File
