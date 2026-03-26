@@ -24,6 +24,40 @@ export class PlaudUnofficialApi implements ICredentialType {
 			required: true,
 			default: '',
 		},
+		{
+			displayName: 'Region',
+			name: 'baseUrl',
+			type: 'options',
+			options: [
+				{
+					name: 'EU (Europe)',
+					value: 'https://api-euc1.plaud.ai',
+				},
+				{
+					name: 'US (United States)',
+					value: 'https://api.plaud.ai',
+				},
+				{
+					name: 'Custom',
+					value: 'custom',
+				},
+			],
+			default: 'https://api-euc1.plaud.ai',
+			description: 'The API region to connect to. Use Custom to specify your own base URL.',
+		},
+		{
+			displayName: 'Custom Base URL',
+			name: 'customBaseUrl',
+			type: 'string',
+			default: '',
+			placeholder: 'https://api.plaud.ai',
+			description: 'The custom base URL for the Plaud API (without trailing slash)',
+			displayOptions: {
+				show: {
+					baseUrl: ['custom'],
+				},
+			},
+		},
 	];
 
 	authenticate: IAuthenticateGeneric = {
@@ -37,7 +71,8 @@ export class PlaudUnofficialApi implements ICredentialType {
 
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: 'https://api-euc1.plaud.ai',
+			baseURL:
+				'={{$credentials.baseUrl === "custom" ? $credentials.customBaseUrl : $credentials.baseUrl}}',
 			url: '/file/simple/web',
 		},
 	};

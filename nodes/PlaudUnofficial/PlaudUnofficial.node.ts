@@ -28,7 +28,6 @@ export class PlaudUnofficial implements INodeType {
 		outputs: ['main'],
 		credentials: [{ name: 'plaudUnofficialApi', required: true }],
 		requestDefaults: {
-			baseURL: 'https://api-euc1.plaud.ai',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
@@ -73,7 +72,11 @@ export class PlaudUnofficial implements INodeType {
 		const resource = this.getNodeParameter('resource', 0) as string;
 		const operation = this.getNodeParameter('operation', 0) as string;
 
-		const baseUrl = 'https://api-euc1.plaud.ai';
+		const credentials = await this.getCredentials('plaudUnofficialApi');
+		const baseUrl =
+			credentials.baseUrl === 'custom'
+				? (credentials.customBaseUrl as string)
+				: (credentials.baseUrl as string);
 
 		for (let i = 0; i < items.length; i++) {
 			try {
