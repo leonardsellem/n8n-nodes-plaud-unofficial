@@ -46,7 +46,7 @@ Then restart your n8n instance.
    - **Safari**: Enable Developer menu in Preferences → Advanced, then `Cmd+Option+I`
 3. Go to the **Network** tab
 4. Click on any recording in the Plaud app to trigger an API request
-5. In the Network tab, look for requests to `api-euc1.plaud.ai`
+5. In the Network tab, look for requests to `api-euc1.plaud.ai` (EU) or `api.plaud.ai` (US)
 6. Click on a request and find the **Headers** section
 7. Look for `Authorization: Bearer eyJ...` — copy everything **after** `Bearer ` (the long string starting with `eyJ`)
 
@@ -60,7 +60,8 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...
 1. In n8n, go to **Settings** → **Credentials** → **Add Credential**
 2. Search for **"Plaud Unofficial API"**
 3. Paste your token into the **Access Token** field
-4. Click **Save**
+4. Select your **Region** (EU, US, or Custom for other endpoints)
+5. Click **Save**
 
 ### 3. Use the node
 
@@ -105,14 +106,14 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...
 
 ## Credentials
 
-This node requires a Plaud API access token.
+This node requires a Plaud API access token and the correct API region.
 
 ### Obtaining your access token
 
 1. Log into the [Plaud web app](https://app.plaud.ai/)
 2. Open browser DevTools (F12) → Network tab
 3. Perform any action (e.g., view a recording)
-4. Find a request to `api-euc1.plaud.ai`
+4. Find a request to `api-euc1.plaud.ai` (EU) or `api.plaud.ai` (US)
 5. Copy the `Authorization` header value (remove the `Bearer ` prefix)
 
 ### Setting up credentials in n8n
@@ -120,7 +121,11 @@ This node requires a Plaud API access token.
 1. Go to **Credentials** → **New Credential**
 2. Search for "Plaud Unofficial API"
 3. Paste your access token
-4. Save
+4. Select your **Region**:
+   - **EU (Europe)** — `api-euc1.plaud.ai` (default)
+   - **US (United States)** — `api.plaud.ai`
+   - **Custom** — enter your own base URL if using a different endpoint
+5. Save
 
 > **Warning:** Access tokens may expire. You'll need to obtain a new one when that happens.
 
