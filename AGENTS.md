@@ -44,7 +44,7 @@ CI runs these on every PR/push to main.
 
 ## API patterns
 
-- Base URL: `https://api-euc1.plaud.ai`
+- Base URL: Configurable per-credential (EU: `api-euc1.plaud.ai`, US: `api.plaud.ai`, or custom)
 - Auth: Bearer token in `Authorization` header
 - All operations use `httpRequestWithAuthentication` helper
 - Response data typically in `.data` or `.data_file_list` fields
